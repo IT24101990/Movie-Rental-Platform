@@ -1,0 +1,92 @@
+@startuml MovieRental
+
+' Model Classes
+class Movie {
+  -id: Long
+  -title: String
+  -director: String
+  -releaseYear: int
+  -genre: String
+  -available: boolean
+  +getters()
+  +setters()
+}
+
+class User {
+  -id: Long
+  -username: String
+  -password: String
+  -email: String
+  -role: String
+  +getters()
+  +setters()
+}
+
+class Admin {
+  -id: Long
+  -username: String
+  -password: String
+  -email: String
+  +manageMovies()
+  +manageUsers()
+  +viewReports()
+  +getters()
+  +setters()
+}
+
+class Rental {
+  -id: Long
+  -movieId: Long
+  -userId: Long
+  -rentalDate: Date
+  -returnDate: Date
+  -status: String
+  +getters()
+  +setters()
+}
+
+' DAO Classes
+interface MovieDAO {
+  +findAll(): List<Movie>
+  +findById(id: Long): Movie
+  +save(movie: Movie): void
+  +update(movie: Movie): void
+  +delete(id: Long): void
+}
+
+interface UserDAO {
+  +findAll(): List<User>
+  +findById(id: Long): User
+  +save(user: User): void
+  +update(user: User): void
+  +delete(id: Long): void
+}
+
+interface AdminDAO {
+  +findAll(): List<Admin>
+  +findById(id: Long): Admin
+  +save(admin: Admin): void
+  +update(admin: Admin): void
+  +delete(id: Long): void
+  +authenticate(username: String, password: String): Admin
+}
+
+interface RentalDAO {
+  +findAll(): List<Rental>
+  +findById(id: Long): Rental
+  +save(rental: Rental): void
+  +update(rental: Rental): void
+  +delete(id: Long): void
+}
+
+' Relationships
+Movie "1" -- "*" Rental
+User "1" -- "*" Rental
+Admin "1" -- "*" Movie : manages
+Admin "1" -- "*" User : manages
+MovieDAO ..> Movie
+UserDAO ..> User
+AdminDAO ..> Admin
+RentalDAO ..> Rental
+
+@enduml 

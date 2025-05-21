@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="C:\Users\user\Desktop\final one\Movie\src\main\webapp">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="C:/Users/user/Desktop/final one/Movie/target/classes" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="C:/Users/user/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jstl-1.2.jar"/>
+    <PostResources base="C:/Users/user/.m2/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/gson-2.8.9.jar"/>
+    <PostResources base="C:/Users/user/.m2/repository/commons-fileupload/commons-fileupload/1.5/commons-fileupload-1.5.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/commons-fileupload-1.5.jar"/>
+    <PostResources base="C:/Users/user/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/commons-io-2.11.0.jar"/>
+  </Resources>
+</Context>
